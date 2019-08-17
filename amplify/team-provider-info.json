@@ -1,0 +1,14 @@
+{
+    "fmcenv": {
+        "awscloudformation": {
+            "AuthRoleName": "findmycarproject-fmcenv-20190703140330-authRole",
+            "UnauthRoleArn": "arn:aws:iam::688154103714:role/findmycarproject-fmcenv-20190703140330-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::688154103714:role/findmycarproject-fmcenv-20190703140330-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "findmycarproject-fmcenv-20190703140330-deployment",
+            "UnauthRoleName": "findmycarproject-fmcenv-20190703140330-unauthRole",
+            "StackName": "findmycarproject-fmcenv-20190703140330",
+            "StackId": "arn:aws:cloudformation:us-west-2:688154103714:stack/findmycarproject-fmcenv-20190703140330/02fd7d00-9dd6-11e9-84d7-0a605950ff58"
+        }
+    }
+}

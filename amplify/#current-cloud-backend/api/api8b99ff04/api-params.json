@@ -1,0 +1,34 @@
+{
+    "paths": [
+        {
+            "name": "/location",
+            "lambdaFunction": "findmycarproject534c1dab",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "api8b99ff04",
+    "apiName": "api8b99ff04",
+    "functionArns": [
+        {
+            "lambdaFunction": "findmycarproject534c1dab"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "findmycarproject-fmcenv-20190703140330-authRole",
+        "unAuthRoleName": "findmycarproject-fmcenv-20190703140330-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "findmycarproject534c1dab",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,90 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "findmycarproject-fmcenv-20190703140330-authRole",
+			"UnauthRoleArn": "arn:aws:iam::688154103714:role/findmycarproject-fmcenv-20190703140330-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::688154103714:role/findmycarproject-fmcenv-20190703140330-authRole",
+			"Region": "us-west-2",
+			"DeploymentBucketName": "findmycarproject-fmcenv-20190703140330-deployment",
+			"UnauthRoleName": "findmycarproject-fmcenv-20190703140330-unauthRole",
+			"StackName": "findmycarproject-fmcenv-20190703140330",
+			"StackId": "arn:aws:cloudformation:us-west-2:688154103714:stack/findmycarproject-fmcenv-20190703140330/02fd7d00-9dd6-11e9-84d7-0a605950ff58"
+		}
+	},
+	"storage": {
+		"dynamo2b3f52ca": {
+			"service": "DynamoDB",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/findmycarproject-fmcenv-20190703140330-deployment/amplify-cfn-templates/storage/dynamo2b3f52ca-cloudformation-template.json",
+				"logicalId": "storagedynamo2b3f52ca"
+			},
+			"lastPushTimeStamp": "2019-07-03T21:09:57.578Z",
+			"output": {
+				"PartitionKeyName": "id",
+				"Region": "us-west-2",
+				"Arn": "arn:aws:dynamodb:us-west-2:688154103714:table/location-table-fmcenv",
+				"PartitionKeyType": "S",
+				"Name": "location-table-fmcenv"
+			},
+			"lastPushDirHash": "cTDOColCnIne0wsMV74YaOudu0Q="
+		}
+	},
+	"function": {
+		"findmycarproject534c1dab": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "storage",
+					"resourceName": "dynamo2b3f52ca",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			],
+			"lastBuildTimeStamp": "2019-07-03T21:07:09.865Z",
+			"lastPackageTimeStamp": "2019-07-03T21:07:13.659Z",
+			"distZipFilename": "findmycarproject534c1dab-4e502f345953594a5061-build.zip",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/findmycarproject-fmcenv-20190703140330-deployment/amplify-cfn-templates/function/findmycarproject534c1dab-cloudformation-template.json",
+				"logicalId": "functionfindmycarproject534c1dab"
+			},
+			"lastPushTimeStamp": "2019-07-03T21:09:57.578Z",
+			"output": {
+				"Region": "us-west-2",
+				"Arn": "arn:aws:lambda:us-west-2:688154103714:function:findmycarproject534c1dab-fmcenv",
+				"Name": "findmycarproject534c1dab-fmcenv"
+			},
+			"lastPushDirHash": "BCZhO4Bo1PJo8DzWZS/wboUWuU0="
+		}
+	},
+	"api": {
+		"api8b99ff04": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "findmycarproject534c1dab",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			],
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/findmycarproject-fmcenv-20190703140330-deployment/amplify-cfn-templates/api/api8b99ff04-cloudformation-template.json",
+				"logicalId": "apiapi8b99ff04"
+			},
+			"lastPushTimeStamp": "2019-07-03T21:09:57.578Z",
+			"output": {
+				"ApiName": "api8b99ff04",
+				"RootUrl": "https://n0gozc7dn1.execute-api.us-west-2.amazonaws.com/fmcenv"
+			},
+			"lastPushDirHash": "NBSpH6VOcgLUAEw8UaELXsiXrws="
+		}
+	}
+}

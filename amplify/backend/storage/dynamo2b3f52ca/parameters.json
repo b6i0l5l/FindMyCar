@@ -1,0 +1,5 @@
+{
+    "tableName": "location-table",
+    "partitionKeyName": "id",
+    "partitionKeyType": "S"
+}
